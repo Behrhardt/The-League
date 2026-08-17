@@ -1,0 +1,48 @@
+name: Deploy to GitHub Pages
+
+# The site is plain static files, so there is nothing to build — this just
+# uploads the repository and hands it to Pages. `enablement: true` turns Pages
+# on the first time this runs, so no repository setting has to be flipped by
+# hand.
+
+on:
+  push:
+    branches:
+      - main
+      - claude/league-landing-website-qjx3kb
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; let an in-flight one finish rather than
+# cancelling it half-published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

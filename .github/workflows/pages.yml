@@ -1,9 +1,13 @@
 name: Deploy to GitHub Pages
 
 # The site is plain static files, so there is nothing to build — this just
-# uploads the repository and hands it to Pages. `enablement: true` turns Pages
-# on the first time this runs, so no repository setting has to be flipped by
-# hand.
+# uploads the repository and hands it to Pages.
+#
+# ONE-TIME SETUP: Settings -> Pages -> Source: "GitHub Actions".
+# That has to be done by hand once. The Actions token is allowed to *deploy* to
+# Pages but not to create the Pages site itself, so `enablement: true` here
+# fails with "Resource not accessible by integration". Once the source is set,
+# every push deploys automatically and nothing else is needed.
 
 on:
   push:
@@ -35,8 +39,6 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload the site
         uses: actions/upload-pages-artifact@v3

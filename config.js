@@ -30,7 +30,7 @@ window.LEAGUE_CONFIG = {
    * ------------------------------------------------------------------------*/
   sleeper: {
     // REQUIRED. Your most recent season's league ID (see Quick Start above).
-    leagueId: "",
+    leagueId: "1384912777046417408",
 
     // How far back to walk. Sleeper links each season to the one before it via
     // `previous_league_id`. Raise this if your league is older than 20 seasons.
@@ -71,13 +71,13 @@ window.LEAGUE_CONFIG = {
 
     memoLine: "Put your team name in the memo. Untagged payments are a nightmare to reconcile.",
 
-    // Optional: track who has paid. Set `paid` to true as money comes in.
-    // Delete the whole `roster` array to hide the tracker entirely.
-    roster: [
-      { team: "Example Team A", manager: "Manager A", paid: true },
-      { team: "Example Team B", manager: "Manager B", paid: true },
-      { team: "Example Team C", manager: "Manager C", paid: false },
-    ],
+    // Optional: track who has paid. Add a line per team and flip `paid` to true
+    // as money comes in. While this list is empty the whole "Who's paid"
+    // section stays hidden, so it never shows placeholder names to the league.
+    //
+    //   { team: "Team name", manager: "Manager name", paid: false },
+    //
+    roster: [],
   },
 
   /* --------------------------------------------------------------------------

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rules · {league}</title>
+  <meta name="description" content="The league rulebook: roster settings, scoring, waivers, trades, playoffs, and payouts.">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+  <script src="config.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <div class="hero">
+      <div class="wrap">
+        <span class="eyebrow">The Rulebook</span>
+        <h1>League rules</h1>
+        <p class="lede">
+          The full rulebook, plus the live league settings straight from Sleeper.
+          If it's in here, it's already been decided.
+        </p>
+      </div>
+    </div>
+
+    <section id="preamble-section" class="hidden">
+      <div class="wrap">
+        <div class="callout" id="preamble"></div>
+      </div>
+    </section>
+
+    <section id="settings-section" class="hidden">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>League settings</h2>
+          <p class="note">Read live from Sleeper, so this can never drift out of sync with the app.</p>
+        </div>
+        <div id="settings"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>The rules</h2>
+          <p class="note">Written rules beat remembered rules. Print this page if you want.</p>
+        </div>
+        <div class="grid grid-2 grid-start" id="rules"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="assets/js/rules.js"></script>
+</body>
+</html>

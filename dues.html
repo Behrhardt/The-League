@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dues &amp; Dates · {league}</title>
+  <meta name="description" content="How much league dues are, how to pay them, when they're due, and when the draft is.">
+  <meta name="color-scheme" content="dark">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+  <script src="config.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <div class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Money &amp; Dates</span>
+        <h1>Dues, payouts, and the draft</h1>
+        <p class="lede">
+          Everything you need to keep your seat: what you owe, where to send it,
+          and every date that matters this season.
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div class="card">
+            <span class="stat-label">League dues</span>
+            <div class="amount-hero" style="margin:10px 0 4px">
+              <span class="amount" id="dues-amount">—</span>
+              <span class="per">per team</span>
+            </div>
+            <p id="dues-deadline" style="color:var(--text-dim)"></p>
+            <p id="dues-note" class="hidden" style="color:var(--text-faint);font-size:.9rem"></p>
+          </div>
+
+          <div class="card">
+            <span class="stat-label">Time left to pay</span>
+            <div class="countdown" id="dues-countdown" style="margin-top:12px"></div>
+            <p id="dues-memo" style="color:var(--text-faint);font-size:.88rem;margin-top:14px"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How to pay</h2>
+          <p class="note">Any of these work. Pick one, send the full amount, and tag it with your team name.</p>
+        </div>
+        <div class="grid grid-3" id="pay-methods"></div>
+      </div>
+    </section>
+
+    <section id="tracker-section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Who's paid</h2>
+          <p class="note" id="tracker-summary"></p>
+        </div>
+        <div id="tracker"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Where the money goes</h2>
+          <p class="note">The whole pot is paid back out. Nobody takes a cut.</p>
+        </div>
+        <div id="payouts"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Draft night</h2>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <span class="stat-label">Countdown to first pick</span>
+            <div class="countdown" id="draft-countdown" style="margin-top:12px"></div>
+            <div id="draft-when" style="margin-top:16px;font-weight:600"></div>
+          </div>
+          <div class="card" id="draft-details"></div>
+        </div>
+        <div id="draft-notes" style="margin-top:16px"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Key dates</h2>
+          <p class="note">Past dates are dimmed. The next one up is highlighted.</p>
+        </div>
+        <div class="card">
+          <ul class="timeline" id="calendar"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-section" class="hidden">
+      <div class="wrap">
+        <div class="callout" id="contact"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script type="module" src="assets/js/dues.js"></script>
+</body>
+</html>
